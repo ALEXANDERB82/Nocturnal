@@ -7,6 +7,17 @@ var client = contentful.createClient({
   accessToken: 'TwJNF9D-6KM3U0zLCvLhTVUIedxF7vpPWGoJNThM3JE'
 })
 
+client.getEntries()
+.then(function (entries) {
+  // log the title for all the entries that have it
+  entries.items.forEach(function (entry) {
+    if(entry.fields.track) {
+      console.log(entry.fields.track)
+      console.log(entry.fields.id)
+    }
+  })
+})
+
 const Library = () => {
   const { loading, user } = useAuth0();
 
@@ -15,9 +26,13 @@ const Library = () => {
   }
 
   return (
+
     <Fragment>
 
+
     </Fragment>
+
+
   );
 };
 
