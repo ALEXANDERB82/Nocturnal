@@ -1,14 +1,15 @@
-// src/components/NavBar.js
-
 import React from "react";
 import { useAuth0 } from "../react-auth0-spa";
 import { Link } from "react-router-dom";
+import logo from "../images/logo.png";
 
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
     <div>
+      <img src={logo} alt="Logo" />
+      
       {!isAuthenticated && (
         <button onClick={() => loginWithRedirect({})}>Log in</button>
       )}
@@ -17,7 +18,8 @@ const NavBar = () => {
 
       {isAuthenticated && (
       <span>
-        <Link to="/">Home</Link>&nbsp;
+        <Link to="/">Feed</Link>&nbsp;
+        <Link to="/library">library</Link>
         <Link to="/profile">Profile</Link>
       </span>
     )}
