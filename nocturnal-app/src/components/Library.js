@@ -21,10 +21,10 @@ var client = contentful.createClient({
 
 
 
-client.getEntry('4ARveMzJcwS3twzIcXEZTP')
-.then(function (entry) {
-  console.log(entry.fields.track)
-})
+// client.getEntry('4ARveMzJcwS3twzIcXEZTP')
+// .then(function (entry) {
+//   console.log(entry.fields.track)
+// })
 
 
 const playlist = [
